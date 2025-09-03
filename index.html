@@ -11,6 +11,8 @@
             var raw = (window.SETTINGS && window.SETTINGS.remoteResource) || window.location.href;
             var baseHref = new URL('.', raw).href;
 
+            console.log("base url", baseHref);
+
             var base = document.createElement('base');
             base.href = baseHref;
             document.head.appendChild(base);
