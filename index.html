@@ -29,10 +29,6 @@
         })();
     </script>
 
-    <!-- 2) (Opcional) Preload de fuentes con rutas relativas (se resuelven con <base>) -->
-    <link rel="preload" as="font" type="font/woff" href="b2c/fonts/gibsonregular.woff" crossorigin>
-    <link rel="preload" as="font" type="font/woff" href="b2c/fonts/gibsonmedium.woff" crossorigin>
-    <link rel="preload" as="font" type="font/woff" href="b2c/fonts/gibsonsemibold.woff" crossorigin>
 
     <!-- 3) @font-face en el HTML, con rutas relativas (gracias a <base>) -->
     <style>
@@ -58,6 +54,13 @@
             font-weight: 600;
             font-style: normal;
             font-display: swap;
+        }
+    </style>
+
+    <style>
+        body {
+            font-family: "Gibson", system-ui, sans-serif;
+            font-weight: 400;
         }
     </style>
 </head>
