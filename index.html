@@ -17,15 +17,15 @@
             base.href = baseHref;
             document.head.appendChild(base);
 
-            // (Opcional) Preconnect al origen para performance
-            try {
-                var origin = new URL(baseHref).origin;
-                var pc = document.createElement('link');
-                pc.rel = 'preconnect';
-                pc.href = origin;
-                pc.setAttribute('crossorigin', '');
-                document.head.appendChild(pc);
-            } catch (e) { }
+            // // (Opcional) Preconnect al origen para performance
+            // try {
+            //     var origin = new URL(baseHref).origin;
+            //     var pc = document.createElement('link');
+            //     pc.rel = 'preconnect';
+            //     pc.href = origin;
+            //     pc.setAttribute('crossorigin', '');
+            //     document.head.appendChild(pc);
+            // } catch (e) { }
         })();
     </script>
 
