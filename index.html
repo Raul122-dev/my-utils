@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        (function () {
+            var raw = (window.SETTINGS && window.SETTINGS.remoteResource) || window.location.href;
+            var baseHref = new URL('.', raw).href;
+
+            var base = document.createElement('base');
+            base.href = baseHref;
+            document.head.appendChild(base);
+
+            // (Opcional) Preconnect al origen para performance
+            try {
+                var origin = new URL(baseHref).origin;
+                var pc = document.createElement('link');
+                pc.rel = 'preconnect';
+                pc.href = origin;
+                pc.setAttribute('crossorigin', '');
+                document.head.appendChild(pc);
+            } catch (e) { }
+        })();
+    </script>
+
+    <!-- 2) (Opcional) Preload de fuentes con rutas relativas (se resuelven con <base>) -->
+    <link rel="preload" as="font" type="font/woff" href="b2c/fonts/gibsonregular.woff" crossorigin>
+    <link rel="preload" as="font" type="font/woff" href="b2c/fonts/gibsonmedium.woff" crossorigin>
+    <link rel="preload" as="font" type="font/woff" href="b2c/fonts/gibsonsemibold.woff" crossorigin>
+
+    <!-- 3) @font-face en el HTML, con rutas relativas (gracias a <base>) -->
+    <style>
+        @font-face {
+            font-family: "Gibson";
+            src: url("b2c/fonts/gibsonregular.woff") format("woff");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Gibson";
+            src: url("b2c/fonts/gibsonmedium.woff") format("woff");
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Gibson";
+            src: url("b2c/fonts/gibsonsemibold.woff") format("woff");
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+    </style>
+</head>
+
+<body>
+    test template
+</body>
+
+</html>
